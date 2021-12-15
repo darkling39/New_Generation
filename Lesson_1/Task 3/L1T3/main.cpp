@@ -4,9 +4,10 @@ using namespace std;
 
 int main()
 {
-    int a = 5, b = 2;
-    int arr [] = {a = 2, b =5};
-    for (int i = 0; i <2; i++)
-    cout << arr[i] << " ";
+    int a = 50, b = 20, c = 0;
+    c = a;
+    a = b;
+    b = c;
+    cout << "a = " << a << endl << "b = " << b;
     return 0;
 }
