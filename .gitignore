@@ -6,3 +6,5 @@ bin/
 *.cbp
 *.exe
 .vscode/
+*.depend
+tempCodeRunnerFile/
