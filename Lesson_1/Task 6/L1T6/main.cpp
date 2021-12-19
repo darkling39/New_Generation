@@ -11,48 +11,40 @@ int main()
     switch (full)
     {
         case 255:
-             cout << "Avaliable ip = " << number << endl;
+             cout << number << endl;
         break;
         case 254:
-         
-            cout << "Avaliable ip = " << number << endl;
-              
+            cout << number << endl;             
         break;
+
          case 252:
-         
-            cout << "Avaliable ip = " << number << endl;
-              
+            cout << number << endl;             
         break;
+
         case 248:
-         
-            cout << "Avaliable ip = " << number << endl;
-              
+            cout << number << endl;            
         break;
+
         case 240:
-         
-            cout << "Avaliable ip = " << number << endl;
-              
+            cout << number << endl;
         break;
-        case 224:
-         
-            cout << "Avaliable ip = " << number << endl;
-              
+
+        case 224:        
+            cout << number << endl;              
         break;
-        case 192:
-         
-            cout << "Avaliable ip = " << number << endl;
-              
+
+        case 192: 
+            cout << number << endl;             
         break;
-        case 128:
-         
-            cout << "Avaliable ip = " << number << endl;
-              
+
+        case 128:  
+            cout << number << endl;      
         break;
-        case 000:
-         
-            cout << "Avaliable ip = " << number << endl;
-              
+
+        case 000:         
+            cout << number << endl;              
         break;
+
         default: cout << "Error: incorrect input";
         break;
     }
