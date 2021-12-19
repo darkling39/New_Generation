@@ -4,13 +4,14 @@ using namespace std;
 
 int main()
 {
-    int num, sum = 0;
+    int num, sum = 0, def;
     cout << "Enter your number: ";
     cin >> num;
-    while (num != 0)
+    def = num;
+    while (def != 0)
     {
-        sum = sum + num%10;
-        num = num/10;
+        sum = sum + def%10;
+        def = def/10;
     }
     cout << "Count of digits = " << sum;
     return 0;
