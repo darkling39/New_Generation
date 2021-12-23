@@ -8,45 +8,6 @@ int main()
     int full, number;
     cin >> full;
     number = 256 - full;
-    switch (full)
-    {
-        case 255:
-             cout << number << endl;
-        break;
-        case 254:
-            cout << number << endl;             
-        break;
-
-         case 252:
-            cout << number << endl;             
-        break;
-
-        case 248:
-            cout << number << endl;            
-        break;
-
-        case 240:
-            cout << number << endl;
-        break;
-
-        case 224:        
-            cout << number << endl;              
-        break;
-
-        case 192: 
-            cout << number << endl;             
-        break;
-
-        case 128:  
-            cout << number << endl;      
-        break;
-
-        case 000:         
-            cout << number << endl;              
-        break;
-
-        default: cout << "Error: incorrect input";
-        break;
-    }
+    cout << number;
     return 0;
 }
