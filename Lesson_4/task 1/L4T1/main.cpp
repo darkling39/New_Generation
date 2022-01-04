@@ -4,17 +4,17 @@ using namespace std;
 
 int main()
 {
-    int counter = 0;
+    int cnt = 0;
     string arr;
     getline(cin, arr);
 
     for(int i=1;i<arr.size();i++)
     {
         if(arr[i] == 33 || arr[i] == 34 || (arr[i] >= 44 && arr[i] <= 46) || arr[i] == 58 || arr[i] == 59 || arr[i] == 63)
-            counter++;
+            cnt++;
     }
 
-    cout << counter << endl;
+    cout << cnt;
 
     /*int arrSize = 20, cnt = 0;
     char arr[arrSize];
