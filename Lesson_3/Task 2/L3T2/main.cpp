@@ -59,7 +59,7 @@ int main()
             {
                 if (i == acc-1)
                 {
-                    Accs[i] = value;
+                    Accs[i] += value;
                 }
             }
         }
@@ -74,7 +74,7 @@ int main()
                     if (Accs[i] < value)
                         cout << "Error: You don`t have enough money" << endl;
                     else
-                        Accs[i] = Accs[i] - value;
+                        Accs[i] -= value;
                 }
             }
         }

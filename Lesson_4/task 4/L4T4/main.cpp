@@ -10,16 +10,16 @@ int main()
     int t = 0;
     for(int i = 0; i < 256; i++)
     {
-        if (String[i] == 97 ||
-            String[i] == 101 ||
-            String[i] == 105 ||
-            String[i] == 111 ||
-            String[i] == 117 ||
-            String[i] == 121)
+        if (String[i] == 'a' ||
+            String[i] == 'e' ||
+            String[i] == 'i' ||
+            String[i] == 'o' ||
+            String[i] == 'u' ||
+            String[i] == 'y')
         {
             t++;
         }
-        if (String[i] == 32 || String[i] == 0)
+        if (String[i] == ' ' || String[i] == 0)
         {
             if (t != 0)
             {

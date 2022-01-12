@@ -4,29 +4,15 @@ using namespace std;
 
 int main()
 {
-    cout << "Enter Hash" << endl;
-    int hash, def, rem1, rem2, sum = 0, last, first;
-    cin >> hash;
-    def = hash;
-    last = def % 10;
-    while (def != 0)
+    int code = 0, value;
+    cin >> value;
+    for (int cntVal = value; cntVal != 0; cntVal /= 10)
     {
-        rem1 = def % 10;
-        rem2 = (def / 10) % 10;
-        if (rem1 == rem2)
-        {
-            sum = sum + rem1;
-        }
-        def = def / 10;
+        if (cntVal%10 == cntVal/10%10)
+            code += cntVal%10;
+        if (cntVal == value%10)
+            code += cntVal;
     }
-    if (rem2 == 0)
-    {
-        first = rem1;
-    }
-    if (first = last)
-    {
-        sum = sum + first;
-    }
-    cout << sum;
+    cout << code;
     return 0;
 }
