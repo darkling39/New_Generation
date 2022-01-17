@@ -1,30 +1,44 @@
 #include <iostream>
 #include <cmath>
+#include <string>
 
 using namespace std;
-int charToInt()
-{
-
-}
-void sum(int num1, int num2)
-{
-    cout << num1+num2;
-}
 
 int main()
 {
-    int num1, num2;
-    int maxLenth = 256;
-    char equation[maxLenth];
-    cin.getline(equation, maxLenth);
-    for(int i = 0; i < maxLenth; i++)
+    /*
+    1) Понять первое число
+    2) Понять второе число
+    3) Преобразовать новое выражение
+    */
+    string equation;
+    cin >> equation;
+    int numbers[equation.size()];
+    for(int i = 0; i < equation.size(); i++)
     {
-        if(equation[i] == '+')
-        {
-
-        }
-
+        numbers[i] = 0;
     }
-    sum(num1, num2);
+    for(int i = 0; i < equation.size(); i++)
+    {
+        if (equation[i] > 48 && equation[i] < 57)
+        {
+            numbers[i] = equation[i] - '0';
+        }
+    }
+     for(int i = 0; i < equation.size(); i++)
+    {
+        cout << numbers[i];
+    }
+    cout << endl;
+    for(int i = 0; i < equation.size(); i++)
+    {
+        if(numbers[i] == 0 && numbers[i+1] != 0)
+        {
+            for(int t = 0; t < i; t++)
+            {
+
+            }
+        }
+    }
     return 0;
 }
