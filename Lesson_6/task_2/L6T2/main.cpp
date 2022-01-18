@@ -7,38 +7,36 @@ using namespace std;
 
 class Jet
 {
-    private:
-        double damage;
-        double HP;
-        double speed;
-    public:
-        void printJet()
-        {
-            cout << "Jet stats: " << endl
-                 << "Damage: " << getDamage() << endl
-                 << "HP: " << getHP() << endl
-                 << "Speed: " << getSpeed() << endl;
-        }
-        void setDamage()
-        {
-            cout << "Enter damage: ";
-            cin >> damage;
-        }
-        double getDamage() {return damage;}
-
-        void setHP()
-        {
-            cout << "Enter HP: ";
-            cin >> HP;
-        }
-        double getHP() {return HP;}
-
-        void setSpeed()
-        {
-            cout << "Enter Speed: ";
-            cin >> speed;
-        }
-        double getSpeed() {return speed;}
+private:
+    double damage;
+    double HP;
+    double speed;
+public:
+    void printJet()
+    {
+        cout << "Jet stats: " << endl
+             << "Damage: " << getDamage() << endl
+             << "HP: " << getHP() << endl
+             << "Speed: " << getSpeed() << endl;
+    }
+    void setDamage()
+    {
+        cout << "Enter damage: ";
+        cin >> damage;
+    }
+    double getDamage() {return damage;}
+    void setHP()
+    {
+        cout << "Enter HP: ";
+        cin >> HP;
+    }
+    double getHP() {return HP;}
+    void setSpeed()
+    {
+        cout << "Enter Speed: ";
+        cin >> speed;
+    }
+    double getSpeed() {return speed;}
 };
 
 
@@ -47,11 +45,11 @@ class Jet
 
 class Cruiser : public Jet
 {
-    private:
-        double armor;
-        int freePlaces;
-        int maxPlaces;
-    public:
+private:
+    double armor;
+    int freePlaces;
+    int maxPlaces;
+public:
     void setArmor()
     {
         cout << "Enter Armor: ";
@@ -94,7 +92,6 @@ class Cruiser : public Jet
 
     int getFreePlaces() {return freePlaces;}
 
-
     int combatPower(int Max, int places, double Damage)
     {
         int combatPower = (Max - places) * Damage;
@@ -109,6 +106,55 @@ class Cruiser : public Jet
              << "Free places for jets: " << getFreePlaces() << endl
              << "Combat power: " << combatPower(getMaxPlaces(), getFreePlaces(), unit.getDamage()) << endl
              << "Speed mark: " << unit.getSpeed() << endl;
+    }
+};
+
+
+
+class Flagman : public Cruiser
+{
+private:
+    double fleetSpeed;
+    int fleetLarge = 0;
+public:
+
+    void addCruiser()
+    {
+        short choose;
+        cout << "DO you want to add a Cruiser into your fleet?" << endl
+             << "1 - YES" << endl
+             << "2 - NO" << endl;
+        cin >> choose;
+        if (choose == 1)
+        {
+            while(choose != 2)
+            {
+                fleetLarge++;
+                cout << "You have " << fleetLarge << " Cruisers in your fleet" << endl;
+                cout << "Another one?" << endl
+                     << "1 - YES" << endl
+                     << "2 - NO" << endl;
+                     cin >> choose;
+            }
+        }
+    }
+    int getFleetLarge() {return fleetLarge;}
+
+    void setFleetSpeed()
+    {
+        cout << "Enter fleet speed: ";
+        cin >> fleetSpeed;
+    }
+    double getFleetSpeed() {return fleetSpeed;}
+
+    void printFlagman()
+    {
+        cout << "Flagman stats: " << endl
+             << "HP: " << getHP() << endl
+             << "Armor: " << getArmor() << endl
+             << "Speed: " << getSpeed() << endl
+             << "Fleet Speed: " << getFleetSpeed() << endl
+             << "Cruisers on the board: " << getFleetLarge() << endl;
     }
 
 
@@ -136,12 +182,22 @@ Cruiser setCruiserStats()
     return tmp;
 }
 
+Flagman setFlagmanStats()
+{
+    Flagman tmp;
+    tmp.setHP();
+    tmp.setArmor();
+    tmp.setSpeed();
+    tmp.setFleetSpeed();
+    return tmp;
+}
+
 
 
 int main()
 {
     theLine();
-    cout << "Create you jet: " << endl;
+    cout << "Create you Jet: " << endl;
     theLine();
 
     Jet JetUnit = setJetStats();
@@ -151,7 +207,7 @@ int main()
     JetUnit.printJet();
 
     theLine();
-    cout << "Create you cruiser: " << endl;
+    cout << "Create you Cruiser: " << endl;
     theLine();
 
     Cruiser CruiserUnit = setCruiserStats();
@@ -163,5 +219,20 @@ int main()
     CruiserUnit.printCruiser(JetUnit);
 
     theLine();
+
+    cout << "Create your Flagman: " << endl;
+
+    theLine();
+
+    Flagman FlagmanUnit = setFlagmanStats();
+    FlagmanUnit.addCruiser();
+
+    theLine();
+
+    FlagmanUnit.printFlagman();
+
+    theLine();
+
+
     return 0;
 }
