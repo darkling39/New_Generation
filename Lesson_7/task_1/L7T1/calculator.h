@@ -24,6 +24,14 @@ private slots:
     void functions();
     void on_m_b_result_clicked();
 
+    void on_m_b_plus_clicked();
+
+    void on_m_b_minus_clicked();
+
+    void on_m_b_multiply_clicked();
+
+    void on_m_b_divide_clicked();
+
 private:
 
     Ui::Calculator *ui;

@@ -88,6 +88,7 @@ void Calculator::unaryFunctions()
 void Calculator::on_m_b_clear_clicked()
 {
     ui->m_e_result->setText("0");
+    ui->m_e_top->setText("");
 }
 
 
@@ -95,10 +96,11 @@ void Calculator::on_m_b_clear_clicked()
 void Calculator::functions()
 {
     QPushButton *button = (QPushButton*)sender();
-    firstNum = ui->m_e_result->text().toDouble();
+
+    ui->m_e_top->setText((ui->m_e_result->text()));
+    firstNum = ui->m_e_top->text().toDouble();
     ui->m_e_result->setText("");
     button->setChecked(true);
-
 }
 
 void Calculator::on_m_b_result_clicked()
@@ -117,6 +119,7 @@ void Calculator::on_m_b_result_clicked()
     }
     if(ui->m_b_minus->isChecked())
     {
+
         resultNumber = firstNum - secondNum;
         newLabel = QString::number(resultNumber);
         ui->m_e_result->setText(newLabel);
@@ -124,20 +127,60 @@ void Calculator::on_m_b_result_clicked()
     }
     if(ui->m_b_divide->isChecked())
     {
+
         resultNumber = firstNum / secondNum;
         newLabel = QString::number(resultNumber);
         ui->m_e_result->setText(newLabel);
+
         ui->m_b_divide->setChecked(false);
     }
     if(ui->m_b_multiply->isChecked())
     {
+
         resultNumber = firstNum * secondNum;
         newLabel = QString::number(resultNumber);
         ui->m_e_result->setText(newLabel);
+
         ui->m_b_multiply->setChecked(false);
     }
+    ui->m_e_top->setText("");
+}
+
+void Calculator::on_m_b_plus_clicked()
+{
+    ui->m_b_plus->setChecked(true);
+    ui->m_b_minus->setChecked(false);
+    ui->m_b_divide->setChecked(false);
+    ui->m_b_multiply->setChecked(false);
 }
 
 
 
+
+
+void Calculator::on_m_b_minus_clicked()
+{
+    ui->m_b_minus->setChecked(true);
+    ui->m_b_divide->setChecked(false);
+    ui->m_b_multiply->setChecked(false);
+    ui->m_b_plus->setChecked(false);
+}
+
+
+void Calculator::on_m_b_multiply_clicked()
+{
+    ui->m_b_multiply->setChecked(true);
+    ui->m_b_plus->setChecked(false);
+    ui->m_b_minus->setChecked(false);
+    ui->m_b_divide->setChecked(false);
+}
+
+
+void Calculator::on_m_b_divide_clicked()
+{
+    ui->m_b_divide->setChecked(true);
+    ui->m_b_minus->setChecked(false);
+    ui->m_b_divide->setChecked(false);
+    ui->m_b_multiply->setChecked(false);
+}
 
